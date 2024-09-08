@@ -21,7 +21,57 @@ loras = [
     name: 'flux-pro',
     value: 'black-forest-labs/flux-pro',
     cost_credits: 20
-  }
+  },
+  {
+    name: 'flux-dev-lora',
+    value: 'lucataco/flux-dev-lora',
+    cost_credits: 10
+  },
+  {
+    name: 'flux-albert-einstein',
+    value: 'pwntus/flux-albert-einstein',
+    cost_credits: 10
+  },
+  {
+    name: 'flux-dreamscape',
+    value: 'bingbangboom-lab/flux-dreamscape',
+    cost_credits: 10
+  },
+  {
+    name: 'flux-dev-realism',
+    value: 'xlabs-ai/flux-dev-realism',
+    cost_credits: 10
+  },
+  {
+    name: 'disposable-camera',
+    value: 'levelsio/disposable-camera',
+    cost_credits: 20
+  },
+  {
+    name: 'flux-monkey-island',
+    value: 'andreasjansson/flux-monkey-island',
+    cost_credits: 20
+  },
+  {
+    name: 'pen_lettering_flux_lora',
+    value: 'agusdor/pen_lettering_flux_lora',
+    cost_credits: 20
+  },
+  {
+    name: 'flux-80s-cyberpunk',
+    value: 'fofr/flux-80s-cyberpunk',
+    cost_credits: 10
+  },
+  {
+    name: 'flux-watercolor',
+    value: 'lucataco/flux-watercolor',
+    cost_credits: 10
+  },
+  {
+    name: 'sticker-maker',
+    value: 'fofr/sticker-maker',
+    cost_credits: 2
+  },
 ]
 
 loras.each do |lora|

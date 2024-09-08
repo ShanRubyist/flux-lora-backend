@@ -18,12 +18,8 @@ class UsageController < ApplicationController
     case params[:model]
     when nil
       1
-    when 'black-forest-labs/flux-schnell'
-      1
-    when 'black-forest-labs/flux-dev'
-      10
-    when 'black-forest-labs/flux-pro'
-      20
+    else
+      Lora.find_by(value: params[:model]).cost_credits
     end
   end
 end
