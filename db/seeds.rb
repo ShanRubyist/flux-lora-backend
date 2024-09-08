@@ -5,3 +5,25 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+loras = [
+  {
+    name: 'flux-schnell(costs 1 credit)',
+    value: 'black-forest-labs/flux-schnell',
+    cost_credits: 1
+  },
+  {
+    name: 'flux-dev(costs 10 credits)',
+    value: 'black-forest-labs/flux-dev',
+    cost_credits: 10
+  },
+  {
+    name: 'flux-pro(costs 20 credits)',
+    value: 'black-forest-labs/flux-pro',
+    cost_credits: 20
+  }
+]
+
+loras.each do |lora|
+  Lora.create(name: lora.fetch(:name), value: lora.fetch(:value), cost_credits: lora.fetch(:cost_credits))
+end
