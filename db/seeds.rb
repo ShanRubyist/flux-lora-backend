@@ -8,17 +8,17 @@
 
 loras = [
   {
-    name: 'flux-schnell(costs 1 credit)',
+    name: 'flux-schnell',
     value: 'black-forest-labs/flux-schnell',
     cost_credits: 1
   },
   {
-    name: 'flux-dev(costs 10 credits)',
+    name: 'flux-dev',
     value: 'black-forest-labs/flux-dev',
     cost_credits: 10
   },
   {
-    name: 'flux-pro(costs 20 credits)',
+    name: 'flux-pro',
     value: 'black-forest-labs/flux-pro',
     cost_credits: 20
   }
