@@ -41,3 +41,23 @@ en:
     application_fee_amount: "application_fee_amount"
     amount_refunded: "amount_refunded"
     credits: "credits"
+  lora:
+    name: "%{model_name}(costs %{cost_credits} credits)"
+    title: "Try %{model} Online"
+    description: "Explore %{model} at https://fluxlora.top"
+    h1: "Generate Image with %{model}"
+    h1_p: "Transform text into unique AI Image with %{model}"
+    lora_description:
+      'black-forest-labs/flux-dev': 'FLUX.1-dev'
+      'black-forest-labs/flux-pro': 'FLUX.1-pro'
+      'black-forest-labs/flux-schnell': 'FLUX.1-schnell'
+      'xlabs-ai/flux-dev-realism': 'FLUX.1-dev with XLabs-AI’s realism lora'
+      'lucataco/flux-dev-lora': 'FLUX.1-Dev LoRA explorer'
+      'pwntus/flux-albert-einstein': 'A fine-tuned FLUX.1 model. Use trigger word "EINSTEIN". Created with ReFlux (https://reflux.replicate.dev).'
+      'bingbangboom-lab/flux-dreamscape': 'Flux lora, use "BSstyle004" to trigger image generation'
+      'levelsio/disposable-camera': 'Take photos with a disposable camera. Like this? Use this with yourself in it on my app PhotoAI.com'
+      'andreasjansson/flux-monkey-island': ''
+      'agusdor/pen_lettering_flux_lora': 'Fine tuned vintage pen lettering and calligraphy model for Flux-dev. Dataset obtained from old calligraphy books, designs carefully selected by quality and made with black ink and pen. Upscaled, refined and captioned for better adherence. Admits drawings'
+      'fofr/flux-80s-cyberpunk': 'A flux lora trained on a 1980s cyberpunk aesthetic'
+      'lucataco/flux-watercolor': 'A Flux LoRA trained on watercolor style photos'
+      'fofr/sticker-maker': 'Make stickers with AI. Generates graphics with transparent backgrounds.'

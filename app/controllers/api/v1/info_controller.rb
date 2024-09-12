@@ -61,7 +61,7 @@ class Api::V1::InfoController < ApplicationController
         seo_title: I18n.t('lora.title', model: lora.value),
         seo_description: I18n.t('lora.description', model: lora.value),
         h1: I18n.t('lora.h1', model: lora.value),
-        h1_p: I18n.t('lora.h1_p'),
+        h1_p: I18n.t('lora.h1_p', model: lora.value),
         lora_description: I18n.t("lora.lora_description.#{lora.value}", default: ''),
         example_pics: lora.example_pics
       }
