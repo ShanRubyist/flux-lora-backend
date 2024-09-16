@@ -61,3 +61,23 @@ en:
       'fofr/flux-80s-cyberpunk': 'A flux lora trained on a 1980s cyberpunk aesthetic'
       'lucataco/flux-watercolor': 'A Flux LoRA trained on watercolor style photos'
       'fofr/sticker-maker': 'Make stickers with AI. Generates graphics with transparent backgrounds.'
+      'lucataco/hyper-flux-8step': 'Hyper FLUX 8-step by ByteDance'
+      'samsa-ai/flux-childbook-illustration': 'Flux Lora, use "in the style of TOK" in your prompt as trigger'
+      'bytedance/sdxl-lightning-4step': 'SDXL-Lightning by ByteDance: a fast text-to-image model that makes high-quality images in 4 steps'
+      'fofr/consistent-character': 'Create images of a given character in different poses'
+      'fofr/pulid-base': 'Use a face to make images. Uses SDXL fine-tuned checkpoints.'
+      'fofr/face-to-many': 'Turn a face into 3D, emoji, pixel art, video game, claymation or toy'
+      'fofr/style-transfer': 'Transfer the style of one image to another'
+      'fofr/become-image': 'Adapt any picture of a face into another image'
+      'fofr/face-to-sticker': 'Turn a face into a sticker'
+      'fofr/flux-mjv3': 'Flux lora trained on Midjourney v3 outputs from 2022, use "a dream, in the style of MJV3" to trigger generation, also try increasing lora strength above 1'
+      'fofr/flux-mona-lisa': 'Flux lora, use the term "MNALSA" to trigger generation'
+      'fofr/aura-flow': 'Largest completely open sourced flow-based generation model that is capable of text-to-image generation'
+      'fofr/kolors': 'A large-scale text-to-image generation model based on latent diffusion, developed by the Kuaishou Kolors team'
+
+
+
+
+
+
+
