@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_09_08_053349) do
+ActiveRecord::Schema[7.0].define(version: 2024_09_16_115736) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -50,6 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_08_053349) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.json "example_pics"
+    t.integer "runs"
     t.index ["value"], name: "index_loras_on_value", unique: true
   end
 
