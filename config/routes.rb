@@ -33,6 +33,8 @@ Rails.application.routes.draw do
       get 'payment_info', to: 'info#payment_info'
       get 'active_subscription_info', to: 'info#active_subscription_info', as: 'active_subscription_info'
 
+      resources :lora
+
       resources :info do
         collection do
 

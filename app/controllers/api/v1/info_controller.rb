@@ -68,6 +68,7 @@ class Api::V1::InfoController < ApplicationController
         name: I18n.t('lora.name', model_name: lora.name, cost_credits: lora.cost_credits),
         value: lora.value,
         cost_credits: lora.cost_credits,
+        runs: lora.runs,
         seo_title: I18n.t('lora.title', model: lora.value),
         seo_description: I18n.t('lora.description', model: lora.value),
         h1: I18n.t('lora.h1', model: lora.value),
