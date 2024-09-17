@@ -45,7 +45,6 @@ Rails.application.routes.draw do
       resources :replicate do
         collection do
           post 'predict' => 'replicate#predict', as: 'predict'
-          get 'generated_images' => 'replicate#generated_images'
         end
       end
 

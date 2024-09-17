@@ -34,7 +34,7 @@ class Api::V1::ReplicateController < UsageController
     end
   end
 
-  def generated_images
+  def index
     params[:page] ||= 1
     params[:per] ||= 20
 

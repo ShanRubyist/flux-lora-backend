@@ -3,13 +3,26 @@ class Api::V1::ShowcasesController < ApplicationController
 
   # GET /showcases
   def index
-    @showcases = Showcase.all
+    params[:page] ||= 1
+    params[:per] ||= 20
 
-    render json: @showcases.map { |showcase|
+    @showcases = Showcase.all
+                         .page(params[:page].to_i)
+                         .per(params[:per].to_i)
+
+    result = @showcases.map do |showcase|
       {
-        showcase: showcase,
+        id: showcase.id,
+        aspect_ratio: showcase.aspect_ratio,
+        created_at: showcase.created_at,
+        prompt: showcase.prompt,
         image: url_for(showcase.image),
       }
+    end
+
+    render json: {
+      total: @showcases.total_count,
+      histories: result
     }
   end
 
@@ -20,7 +33,10 @@ class Api::V1::ShowcasesController < ApplicationController
       seo_description: I18n.t('showcase.description', prompt: @showcase.prompt, default: ''),
       h1: I18n.t('showcase.h1', prompt: @showcase.prompt),
       h1_p: I18n.t('showcase.h1_p', prompt: @showcase.prompt, default: ''),
-      showcase: @showcase,
+      id: @showcase.id,
+      aspect_ratio: @showcase.aspect_ratio,
+      created_at: @showcase.created_at,
+      prompt: @showcase.prompt,
       image: url_for(@showcase.image)
     }
   end
