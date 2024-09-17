@@ -5,12 +5,20 @@ class Api::V1::ShowcasesController < ApplicationController
   def index
     @showcases = Showcase.all
 
-    render json: @showcases
+    render json: @showcases.map { |showcase|
+      {
+        showcase: showcase,
+        image: url_for(showcase.image),
+      }
+    }
   end
 
   # GET /showcases/1
   def show
-    render json: @showcase
+    render json: {
+      showcase: @showcase,
+      image: url_for(@showcase.image)
+    }
   end
 
   # POST /showcases
@@ -39,13 +47,14 @@ class Api::V1::ShowcasesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_showcase
-      @showcase = Showcase.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def showcase_params
-      params.fetch(:showcase, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_showcase
+    @showcase = Showcase.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def showcase_params
+    params.fetch(:showcase, {})
+  end
 end
