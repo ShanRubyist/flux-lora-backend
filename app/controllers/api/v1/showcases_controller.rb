@@ -16,6 +16,10 @@ class Api::V1::ShowcasesController < ApplicationController
   # GET /showcases/1
   def show
     render json: {
+      seo_title: I18n.t('showcase.title', prompt: @showcase.prompt, default: ''),
+      seo_description: I18n.t('showcase.description', prompt: @showcase.prompt, default: ''),
+      h1: I18n.t('showcase.h1', prompt: @showcase.prompt),
+      h1_p: I18n.t('showcase.h1_p', prompt: @showcase.prompt, default: ''),
       showcase: @showcase,
       image: url_for(@showcase.image)
     }
