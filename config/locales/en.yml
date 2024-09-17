@@ -79,7 +79,11 @@ en:
     description: "Generate Image with prompt: \"%{prompt}\""
     h1: "Generate Image with prompt: \"%{prompt}\""
     h1_p: ""
-
+  showcase:
+    title: "Showcase Image Created with prompt: \"%{prompt}\""
+    description: "Explore Our Gallery of AI-Generated Masterpieces Created with prompt: \"%{prompt}\""
+    h1: "Created with prompt: \"%{prompt}\""
+    h1_p: "Explore Our Gallery of AI-Generated Masterpieces Created with prompt: \"%{prompt}\""
 
 
 

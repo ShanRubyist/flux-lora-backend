@@ -1,6 +1,6 @@
 class Api::V1::LoraController < ApplicationController
 
-  def models_info
+  def index
     category = params[:category]
     lora_category = case category.to_i
                     when 1
@@ -22,7 +22,7 @@ class Api::V1::LoraController < ApplicationController
         h1: I18n.t('lora.h1', model: lora.value),
         h1_p: I18n.t('lora.h1_p', model: lora.value),
         lora_description: I18n.t("lora.lora_description.#{lora.value}", default: ''),
-        example_pics: lora.example_pics
+        example_pics: lora.showcases.map {|i| url_for(i.image)}
       }
     end
 
@@ -32,7 +32,10 @@ class Api::V1::LoraController < ApplicationController
   def show
     lora = Lora.find_by(name: params[:id])
     if lora
-      render json: lora
+      render json: {
+        value: lora.value,
+        example_pics: lora.showcases.map { |i| url_for(i.image) }
+      }
     else
       render json: {
         message: "#{params[:name]} not exist"
