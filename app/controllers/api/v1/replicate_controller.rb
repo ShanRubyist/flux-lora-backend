@@ -67,6 +67,10 @@ class Api::V1::ReplicateController < UsageController
     item = current_user.replicated_calls.find_by(predict_id: params[:id])
     if item
       render json: {
+        seo_title: I18n.t('image.title', prompt: item.prompt, default: ''),
+        seo_description: I18n.t('image.description', prompt: item.prompt, default: ''),
+        h1: I18n.t('image.h1', prompt: item.prompt),
+        h1_p: I18n.t('image.h1_p', prompt: item.prompt, default: ''),
         image: (url_for(item.image) rescue nil),
         prompt: item.prompt,
         created_at: item.created_at,
