@@ -52,7 +52,8 @@ class Api::V1::ReplicateController < UsageController
         aspect_ratio: item.aspect_ratio,
         cost_credits: item.cost_credits,
         model: item.model&.sub("black-forest-labs/", ''),
-        status: item.data.fetch('status') { nil }
+        status: item.data.fetch('status') { nil },
+        id: item.predict_id
       }
     end
 
@@ -62,5 +63,22 @@ class Api::V1::ReplicateController < UsageController
     }
   end
 
-  private
+  def show
+    item = current_user.replicated_calls.find_by(predict_id: params[:id])
+    if item
+      render json: {
+        image: (url_for(item.image) rescue nil),
+        prompt: item.prompt,
+        created_at: item.created_at,
+        aspect_ratio: item.aspect_ratio,
+        cost_credits: item.cost_credits,
+        model: item.model&.sub("black-forest-labs/", ''),
+        status: item.data.fetch('status') { nil }
+      }
+    else
+      render json: {
+        message: "#{params[:id]} not exist"
+      }, status: 400
+    end
+  end
 end
