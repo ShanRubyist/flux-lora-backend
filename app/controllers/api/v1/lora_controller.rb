@@ -22,7 +22,7 @@ class Api::V1::LoraController < ApplicationController
         h1: I18n.t('lora.h1', model: lora.value),
         h1_p: I18n.t('lora.h1_p', model: lora.value),
         lora_description: I18n.t("lora.lora_description.#{lora.value}", default: ''),
-        example_pics: lora.showcases.map {|i| { id: i.id, image: url_for(i.image) }}
+        example_pics: lora.showcases.map {|i| { id: i.id, image: (url_for(i.image) rescue nil) }}
       }
     end
 
