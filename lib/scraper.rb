@@ -47,9 +47,23 @@ data = Scraper.scrape(urls) do |doc, url|
   html = URI.open(url.sub('/examples?output=json', ''),
                   'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36')
   doc2 = Nokogiri::HTML(html)
-  json_str = doc2.css('div.max-w-2xl > script[type="application/json"]')
-  json = JSON.parse(json_str[0]&.text || '{}')
-  cost_credits = json['officialModel'] ? json.fetch('officialModel').fetch('cost_per_billing_unit_for_output_dollars') : nil
+  dom = doc2.css("div#pricing > p")
+  cost_credits = nil
+  if dom.text =~ /\$(\d+(\.\d+)?)/
+    cost_credits = $1.to_f
+  end
+
+  unless cost_credits
+    json_str = doc2.css('div.max-w-2xl > script[type="application/json"]')
+    json = JSON.parse(json_str[0]&.text || '{}')
+
+    if json['officialModel']
+      cost_credits = json.fetch('officialModel').fetch('cost_per_billing_unit_for_output_dollars')
+    else
+      puts "[-] ERROR: cost_credits is nil"
+    end
+
+  end
 
   # Get showcases
   json_str = doc.css('div.model-content > script[type="application/json"]')
