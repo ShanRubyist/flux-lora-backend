@@ -26,14 +26,14 @@ class Scraper
     end
   end
 
-  def self.output_data(hash, file_name = 'output.json')
+  def self.output_data(hash, file_name = File.join(Rails.root, 'lib/output.json'))
     output_file = File.open(file_name, 'w')
     output_file.write(JSON.pretty_generate(hash))
     output_file.close
   end
 end
 
-urls = File.readlines('urls.txt').map(&:strip)
+urls = File.readlines(File.join(Rails.root, "lib/urls.txt")).map(&:strip)
 
 data = Scraper.scrape(urls) do |doc, url|
   model = doc.css('h3 >span').to_a

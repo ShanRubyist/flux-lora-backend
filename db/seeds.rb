@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-require_relative 'lib/scraper'
+require_relative '../lib/scraper'
 require 'json'
 
 loras = JSON.parse(File.read("lib/output.json"))
@@ -15,7 +15,7 @@ def create_new_showcase(lora, prompt, image)
   lora_showcase = lora.showcases.find_by(prompt: prompt)
 
   if lora_showcase.nil? || !lora_showcase.image.attached?
-    showcase = lora.showcases.create(prompt: prompt)
+    showcase = lora.showcases.create(prompt: prompt, output: image)
     require 'open-uri'
     begin
       showcase.image.attach(io: URI.open(image), filename: URI(image).path.split('/').last) unless image.empty?
