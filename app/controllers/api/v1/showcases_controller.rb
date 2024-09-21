@@ -16,7 +16,7 @@ class Api::V1::ShowcasesController < ApplicationController
         aspect_ratio: showcase.aspect_ratio,
         created_at: showcase.created_at,
         prompt: showcase.prompt,
-        image: url_for(showcase.image) resue nil,
+        image: (url_for(showcase.image) resue nil),
       }
     end
 
