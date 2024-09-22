@@ -13,6 +13,7 @@ class Api::V1::ShowcasesController < ApplicationController
     result = @showcases.map do |showcase|
       {
         id: showcase.id,
+        model: showcase.lora.name,
         aspect_ratio: showcase.aspect_ratio,
         created_at: showcase.created_at,
         prompt: showcase.prompt,
