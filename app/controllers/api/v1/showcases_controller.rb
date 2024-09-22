@@ -7,6 +7,7 @@ class Api::V1::ShowcasesController < ApplicationController
     params[:per] ||= 20
 
     @showcases = Showcase.all
+                         .order("created_at desc")
                          .page(params[:page].to_i)
                          .per(params[:per].to_i)
 
