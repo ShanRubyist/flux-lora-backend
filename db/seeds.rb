@@ -32,6 +32,8 @@ loras.each do |i|
   lora = Lora.find_by(value: i.fetch('model_value'))
   if lora
     lora.update(
+      name: i.fetch('model'),
+      value: i.fetch('model_value'),
       runs: i.fetch('runs').gsub(/(\d+(?:\.\d+)?)\s*([KkMmBb])/) { |match|
         num = $1.to_f
         case $2.downcase

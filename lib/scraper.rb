@@ -36,7 +36,7 @@ end
 urls = File.readlines(File.join(Rails.root, "lib/urls.txt")).map(&:strip)
 
 data = Scraper.scrape(urls) do |doc, url|
-  model = doc.css('h3 >span').to_a
+  model = doc.css('h3 >span.block').to_a
   model_name = model[0].text.strip
   model_value = model_name + '/' + model[2].text.split("\n")[0].strip
 
