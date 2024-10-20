@@ -1,0 +1,50 @@
+[
+  {
+    "model": "AI Medal",
+    "model_value": "shan/AI-Medal-Generator",
+    "description": "Create unique AI Medals with Flux.1 AI image generator",
+    "runs": "1K",
+    "cost_credits": "0.003",
+    "showcases": []
+  },
+  {
+    "model": "AI Anime",
+    "model_value": "shan/AI-Anime-Generator",
+    "description": "Create unique AI Anime art with Flux.1 AI image generator",
+    "runs": "1K",
+    "cost_credits": "0.003",
+    "showcases": []
+  },
+  {
+    "model": "AI Avatar",
+    "model_value": "shan/AI-Avatar-Generator",
+    "description": "Create unique AI Avatar or Profile Picture with Flux.1 AI image generator",
+    "runs": "1K",
+    "cost_credits": "0.003",
+    "showcases": []
+  },
+  {
+    "model": "AI Logo Design",
+    "model_value": "shan/AI-Logo-Generator",
+    "description": "Create unique AI Logo with Flux.1 AI image generator",
+    "runs": "1K",
+    "cost_credits": "0.003",
+    "showcases": []
+  },
+  {
+    "model": "AI Single Line Drawing",
+    "model_value": "shan/AI-Single-Line-Drawing-Generator",
+    "description": "Create unique AI Single Line Drawing with Flux.1 AI image generator",
+    "runs": "1K",
+    "cost_credits": "0.003",
+    "showcases": []
+  },
+  {
+    "model": "AI Food Photography",
+    "model_value": "shan/AI-Food-Photography-Generator",
+    "description": "Create unique AI Food Photography with Flux.1 AI image generator",
+    "runs": "1K",
+    "cost_credits": "0.003",
+    "showcases": []
+  }
+]
