@@ -42,7 +42,7 @@ class Api::V1::LoraController < ApplicationController
         seo_description: I18n.t('tool.description', model: display_name),
         h1: I18n.t('tool.h1', model: display_name),
         h1_p: I18n.t('tool.h1_p', model: display_name),
-        lora_description: I18n.t("tool.lora_description.#{lora.value}", default: ''),
+        lora_description: I18n.t("tool.tool_description.#{lora.value}", default: ''),
         example_pics: lora.showcases.map {|i| { id: i.id, image: (url_for(i.image) rescue nil) }}
       }
     end
