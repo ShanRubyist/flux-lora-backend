@@ -43,10 +43,10 @@ en:
     credits: "credits"
   lora:
     name: "%{model_name}(costs %{cost_credits} credits)"
-    title: "Try %{model} Online"
-    description: "Try %{model} at https://fluxlora.top"
-    h1: "Try %{model} Online"
-    h1_p: "Generate Image with %{model}"
+    title: "%{model} Style Image Generator Online"
+    description: "Generate Image with Flux LoRA Model %{model}"
+    h1: "%{model} Style Image Generator Online"
+    h1_p: "Generate Image with Flux LoRA Model %{model}"
     lora_description:
       'black-forest-labs/flux-dev': 'FLUX.1-dev'
       'black-forest-labs/flux-pro': 'FLUX.1-pro'
