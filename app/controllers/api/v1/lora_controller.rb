@@ -51,7 +51,7 @@ class Api::V1::LoraController < ApplicationController
   end
 
   def show
-    lora = Lora.find_by(name: params[:id])
+    lora = Lora.find_by(name: params[:model_name])
     if lora
       render json: {
         value: lora.value,
