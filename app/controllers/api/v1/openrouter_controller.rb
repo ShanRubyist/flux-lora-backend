@@ -1,4 +1,4 @@
-class Api::V1::OpenrouterController < ApplicationController
+class Api::V1::OpenrouterController < UsageController
   include OpenrouterConcern
 
   before_action :authenticate_user!
